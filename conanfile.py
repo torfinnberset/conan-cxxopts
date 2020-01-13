@@ -7,7 +7,7 @@ import os
 
 class CxxOptsConan(ConanFile):
     name = "cxxopts"
-    version = "v2.2.0"
+    version = "2.2.0"
     description = "Lightweight C++ command line option parser"
     # topics can get used for searches, GitHub topics, Bintray tags etc. Add here keywords about the library
     topics = ("conan", "cxxopts", "command line")
@@ -29,7 +29,7 @@ class CxxOptsConan(ConanFile):
     def source(self):
         git = tools.Git(folder=self._source_subfolder)
         git.clone("https://github.com/jarro2783/cxxopts")
-        git.checkout(self.version)
+        git.checkout(F"v{self.version}")
 
 
     def package(self):
