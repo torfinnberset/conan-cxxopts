@@ -7,7 +7,7 @@ import os
 
 class CxxOptsConan(ConanFile):
     name = "cxxopts"
-    version = "v2.1.2"
+    version = "v2.2.0"
     description = "Lightweight C++ command line option parser"
     # topics can get used for searches, GitHub topics, Bintray tags etc. Add here keywords about the library
     topics = ("conan", "cxxopts", "command line")
