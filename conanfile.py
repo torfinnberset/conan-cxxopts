@@ -14,8 +14,8 @@ class CxxOptsConan(ConanFile):
     url = "https://github.com/inexorgame/conan-cxxopts"
     homepage = "https://github.com/jarro2783/cxxopts"
     author = "Inexor <info@inexor.org>"
-    options = {"use_exceptions": [True, False]}
-    default_options = {"use_exceptions": True}
+    options = {"use_exceptions": [True, False], "use_unicode": [True, False]}
+    default_options = {"use_exceptions": True, "use_unicode": False}
 
     license = "MIT"  # Indicates license type of the packaged library; please use SPDX Identifiers https://spdx.org/licenses/
     no_copy_source = True
@@ -41,6 +41,9 @@ class CxxOptsConan(ConanFile):
     def package_info(self):
         if not self.options.use_exceptions:
             self.cpp_info.defines = ["CXXOPTS_NO_EXCEPTIONS"]
+            
+        if self.options.use_unicode:
+            self.cpp_info.defines = ["CXXOPTS_USE_UNICODE"]
 
 
     def package_id(self):
